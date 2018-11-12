@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check in</title>
+</head>
+<body>
+<form action="/api" method="post" id="form_check_in">
+    <label>Input student card:
+        <input name="student_card" type = "text"   value="{{ check_in.get('student_card') }}"/>
+    </label><br>
+    <label>Input  lesson id
+        <input name="lesson_id" type = "text"  value="{{ check_in.get('lesson_id') }}"/>
+    </label><br>
+    <label>Input date:
+        <input name="check_in_date" type = "text"  value="{{ check_in.get('check_in_date') }}"/>
+    </label><br>
+    <button type="submit" form="form_check_in" name="action" value="check_in_update">Submit</button>
+</form>
+</body>
+</html>
