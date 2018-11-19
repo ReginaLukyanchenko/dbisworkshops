@@ -450,7 +450,8 @@ alter table lesson
 
 alter table schedule
    add constraint FK_SCHEDULE_SCHEDULE__LESSON foreign key (lesson_id)
-      references lesson (lesson_id);
+      references lesson (lesson_id)
+      ON DELETE CASCADE;
 
 alter table schedule
    add constraint FK_SCHEDULE_STUDENT_S_STUDENT_ foreign key (group_id)
@@ -478,11 +479,13 @@ alter table student_presence
 
 alter table student_presence
    add constraint FK_STUDENT__STUDENT_P_LESSON foreign key (lesson_id)
-      references lesson (lesson_id);
+      references lesson (lesson_id)
+      ON DELETE CASCADE;
 
 alter table student_presence
    add constraint FK_STUDENT__TEACHER_C_TEACHER foreign key (teacher_id)
-      references teacher (teacher_id);
+      references teacher (teacher_id)
+      ON DELETE CASCADE;
 
 alter table teacher
    add constraint FK_TEACHER_FACULTY_T_FACULTY foreign key (faculty_id)
