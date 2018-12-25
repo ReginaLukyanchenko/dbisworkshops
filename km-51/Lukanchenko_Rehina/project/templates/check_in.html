@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Check in </h1>
+  {% from "includes/_formhelpers.html" import render_field %}
+  <form   method="POST" action="/check_in">
+    <select id="groupSelect" name = "group">
+        {% for group in groups %}
+        <option value={{ group[0] }}>{{ group[1] }}</option>
+    {% endfor %}
+    </select>
+    <select id="disciplineSelect" name = "discipline">
+        {% for discipline in disciplines %}
+        <option value={{ discipline[0] }}> {{ discipline[1] }}</option>
+    {% endfor %}
+    </select>
+    <input type="submit" value="Submit">
+  </form>
+{% endblock %}
